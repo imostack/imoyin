@@ -20,6 +20,7 @@ export function ContactForm() {
     email: '',
     subject: '',
     message: '',
+    _trap: '',
   });
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
@@ -75,6 +76,17 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Honeypot — invisible to humans, bots fill it and get silently dropped */}
+      <input
+        type="text"
+        name="_trap"
+        value={formData._trap}
+        onChange={handleChange}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
+      />
       <div className="grid sm:grid-cols-2 gap-6">
         <div>
           <label className="block font-code text-[11px] text-smoke mb-2 tracking-wide uppercase">
