@@ -45,7 +45,7 @@ export default function VenturesPage() {
               </div>
               <div>
                 <p className="font-code text-[11px] tracking-widest uppercase text-smoke">App Guts</p>
-                <p className="font-code text-[11px] text-faint">Founded 2024 · Active</p>
+                <p className="font-code text-[11px] text-faint">Est. 2024 · Active</p>
               </div>
             </div>
             <h2 className="font-display font-light text-fog mb-6"
@@ -58,17 +58,16 @@ export default function VenturesPage() {
             <AnimatedSection>
               <div className="space-y-4 text-smoke text-sm leading-relaxed">
                 <p>
-                  App Guts emerged from the dissolution and rebranding of Alprosel Tech —
-                  a web development services business I ran from 2020. When I folded
-                  Alprosel Tech in 2024, it wasn't a shutdown. It was a deliberate pivot:
-                  stop selling development hours, start building products.
+                  App Guts is a SaaS company building software products for the Nigerian
+                  and African market. After Alprosel Tech — a services business — ran its
+                  course, the move to App Guts was deliberate: stop selling development
+                  hours, start building products that scale.
                 </p>
                 <p>
-                  The distinction matters. A services business grows by hiring more people
-                  and taking on more clients. A SaaS company grows by building something
-                  once and letting it scale. App Guts is the latter. We're not looking
-                  for web development clients. We're building software that earns its keep
-                  while we sleep.
+                  The distinction matters. A services business grows by taking on more
+                  clients. A SaaS company builds something once and lets it grow. That's
+                  the model. App Guts isn't looking for dev contracts — the team is
+                  building software that earns its keep.
                 </p>
                 <p>
                   EventsKona is the first product out of App Guts. It won't be the last.
@@ -82,7 +81,7 @@ export default function VenturesPage() {
               <div className="space-y-0 divide-y divide-rim">
                 {[
                   { label: 'Company type',   value: 'SaaS' },
-                  { label: 'Founded',        value: '2024 (from Alprosel Tech, est. 2020)' },
+                  { label: 'Est.',            value: '2024' },
                   { label: 'Flagship product', value: 'EventsKona' },
                   { label: 'Focus',          value: 'Nigerian & African market' },
                   { label: 'Status',         value: 'Active — building' },

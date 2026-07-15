@@ -35,7 +35,7 @@ export function Footer() {
               <span className="text-amber">Sampson</span>
             </p>
             <p className="text-smoke text-sm leading-relaxed max-w-xs mt-3">
-              Founder, software engineer, and saxophonist. Building software,
+              Software engineer, co-founder, and saxophonist. Building software,
               systems and companies that help businesses grow.
               Port Harcourt, Nigeria.
             </p>

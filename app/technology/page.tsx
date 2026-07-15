@@ -23,7 +23,7 @@ const projects = [
     name: 'App Guts — SaaS platform foundation',
     category: 'Internal tooling · SaaS',
     description:
-      'Designed and built the core technical infrastructure for App Guts: multi-tenant architecture, product delivery workflows, and the operational foundation that powers EventsKona and future products. Runs on Next.js, PostgreSQL, and AWS.',
+      'Built the core technical infrastructure at App Guts: multi-tenant architecture, product delivery workflows, and the operational foundation that powers EventsKona and future products. Runs on Next.js, PostgreSQL, and AWS.',
     outcome: 'Clean separation of concerns that lets us ship new SaaS products quickly. EventsKona launched on this foundation in April 2026.',
     year: '2024–Present',
     stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'AWS', 'Prisma'],
@@ -66,7 +66,7 @@ export default function TechnologyPage() {
           </AnimatedSection>
           <AnimatedSection delay={0.15} className="max-w-2xl">
             <p className="text-smoke text-lg leading-relaxed">
-              Building software that runs in production since 2020 —
+              Building software that runs in production,
               shipping features, absorbing traffic, surviving incidents,
               and handling the edge cases that nobody specified.
               I write code that future engineers can reason about.
@@ -86,7 +86,7 @@ export default function TechnologyPage() {
               <div className="space-y-4 text-smoke text-sm leading-relaxed prose-site">
                 <p>
                   I'm not interested in clever code. I'm interested in code that a team
-                  can modify safely six months after I've shipped it. That means clear
+                  can modify safely six months after it's been shipped. That means clear
                   boundaries, explicit data contracts, and tests that test behaviour — not
                   implementation details.
                 </p>
@@ -98,7 +98,7 @@ export default function TechnologyPage() {
                 </p>
                 <p>
                   AI has changed what's possible, not what matters. The fundamentals —
-                  clear data models, good API design, systems that fail gracefully — are
+                  clear data models, good API design, systems that fail gracefully are
                   more important now, not less. I use AI deliberately, as a tool,
                   not as a substitute for thinking.
                 </p>

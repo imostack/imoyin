@@ -5,7 +5,7 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'The story behind Imoyin Sampson — founder, engineer, and lifelong builder.',
+  description: 'The story behind Imoyin Sampson — engineer, co-founder, and lifelong builder.',
 };
 
 const principles = [
@@ -39,8 +39,8 @@ export default function AboutPage() {
               <span className="text-amber">job description</span>
             </h1>
             <p className="text-smoke text-lg leading-relaxed max-w-2xl">
-              Founder and software engineer based in Port Harcourt, Nigeria. I build SaaS
-              products through App Guts, work in the oil and gas industry, and have performed
+              Software engineer and co-founder based in Port Harcourt, Nigeria. I build
+              products at App Guts, work in the oil and gas industry, and have performed
               as a saxophonist under the name Jimmy Sampson since 2010. All three require
               the same thing: precision, commitment, and showing up.
             </p>
@@ -62,7 +62,8 @@ export default function AboutPage() {
                   I came back properly in 2020 and moved fast. I founded Alprosel Tech,
                   a web development services business, and started shipping real products.
                   By 2024 the model had run its course: services businesses don't scale the
-                  way I wanted to build. I dissolved Alprosel Tech and built App Guts instead.
+                  way I wanted to build. I dissolved Alprosel Tech and came on as
+                  co-founder at App Guts.
                 </p>
                 <p>
                   App Guts is a SaaS company, not a dev shop. The pivot was deliberate.
@@ -72,7 +73,7 @@ export default function AboutPage() {
                   products are in development.
                 </p>
                 <p>
-                  Alongside software, I work in oil and gas. It's a slower, heavier world
+                  Alongside software, I work as a field engineer in oil and gas. It's a slower, heavier world
                   where a failed system has real consequences — not a sprint retrospective.
                   Operating in that environment permanently shaped how I think about
                   reliability and what it means to build something that holds.

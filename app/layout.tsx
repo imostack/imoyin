@@ -24,11 +24,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Imoyin Sampson — Software Engineer & Founder',
+    default: 'Imoyin Sampson — Software Engineer & Co-founder',
     template: '%s — Imoyin Sampson',
   },
   description:
-    'Software engineer and founder of App Guts and EventsKona. Based in Port Harcourt, Nigeria.',
+    'Software engineer and co-founder at App Guts. Building products and companies from Port Harcourt, Nigeria.',
   keywords: [
     'Imoyin Sampson',
     'Software Engineer Nigeria',

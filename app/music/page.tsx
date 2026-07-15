@@ -1,13 +1,19 @@
 import type { Metadata } from 'next';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
+import { ArrowUpRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Music',
   description: 'Jimmy Sampson — professional saxophonist, live performer, and mentor. The musical side of Imoyin Sampson.',
 };
 
-// Replace with a YouTube video ID from @ijsampson (e.g. 'dX4KZGF8ABC')
 const FEATURED_VIDEO_ID = 'j5dUqC9qugo';
+
+const streamingLinks = [
+  { platform: 'Apple Music',   href: 'https://music.apple.com/us/album/mission-ep/1725201165' },
+  { platform: 'Audiomack',     href: 'https://audiomack.com/jismusic' },
+  { platform: 'YouTube Music', href: 'https://music.youtube.com/playlist?list=OLAK5uy_lA1oGebTI4beZuAN-K5nPvzakbrOQwNDU' },
+];
 
 export default function MusicPage() {
   return (
@@ -59,6 +65,36 @@ export default function MusicPage() {
               performing since 2010, and now recording. The discipline behind the
               engineering and the discipline behind the saxophone are the same thing.
             </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Listen */}
+      <section className="py-16 bg-canvas border-b border-rim">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <AnimatedSection className="mb-6">
+            <p className="font-code text-[11px] tracking-widest uppercase text-smoke">
+              Listen
+            </p>
+          </AnimatedSection>
+          <AnimatedSection>
+            <div className="divide-y divide-rim border border-rim sm:flex sm:divide-y-0 sm:divide-x">
+              {streamingLinks.map(({ platform, href }) => (
+                <a
+                  key={platform}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-1 items-center justify-between px-6 py-5 hover:bg-surface transition-colors group"
+                >
+                  <span className="text-sm text-fog">{platform}</span>
+                  <ArrowUpRight
+                    size={14}
+                    className="text-smoke group-hover:text-amber transition-colors"
+                  />
+                </a>
+              ))}
+            </div>
           </AnimatedSection>
         </div>
       </section>

@@ -13,7 +13,7 @@ const ventures = [
     metrics: [
       { v: 'SaaS',  l: 'Company type'      },
       { v: 'EK',    l: 'Flagship product'  },
-      { v: '2024',  l: 'Founded (as App Guts)' },
+      { v: '2024',  l: 'Est.' },
     ],
     href: '/ventures#app-guts',
   },
