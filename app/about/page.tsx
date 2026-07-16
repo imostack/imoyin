@@ -15,7 +15,7 @@ const principles = [
   },
   {
     label: 'Communication is the hardest engineering problem.',
-    body: "The best-written code in a broken organisation will fail. The clearest architecture won't survive a team that doesn't share a mental model. Technical excellence requires human clarity — and most founders underestimate this.",
+    body: "I've seen it in the field. Not a technical failure — just someone assuming someone else already knew, and suddenly you're dealing with something that didn't have to happen. That's why toolbox talks exist: a few minutes of shared, deliberate clarity before work starts. Software teams aren't so different. The best-written code in a broken organisation will still fail. The clearest architecture won't survive a team that doesn't share a mental model. Most founders underestimate this part.",
   },
   {
     label: 'Africa deserves world-class products.',
