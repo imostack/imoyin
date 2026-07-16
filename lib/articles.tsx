@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import Image from 'next/image';
 
 export type Article = {
   slug: string;
@@ -12,28 +13,68 @@ export type Article = {
   Content?: () => ReactNode;
 };
 
+function PullQuote({ children }: { children: ReactNode }) {
+  return (
+    <blockquote className="border-l-2 border-amber pl-6 py-2 my-8">
+      <p className="font-display font-light text-fog text-xl lg:text-2xl leading-snug">
+        {children}
+      </p>
+    </blockquote>
+  );
+}
+
+function ArticleImage({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+}) {
+  return (
+    <figure className="my-10 -mx-4 sm:mx-0">
+      <div className="relative w-full aspect-[16/9] overflow-hidden bg-surface border border-rim">
+        <Image src={src} alt={alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 672px" />
+      </div>
+      {caption && (
+        <figcaption className="font-code text-[11px] text-faint mt-3 tracking-wide">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
 function AfricanDevelopersContent() {
   return (
-    <div className="space-y-8 text-smoke text-sm leading-relaxed">
-      <p className="text-fog text-base leading-relaxed">
-        Most Nigerian developers I know are excellent at their craft. They can architect
-        APIs, design databases, and ship features under pressure. The code is rarely the problem.
-      </p>
-      <p>
-        The problem is the mental model behind it.
-      </p>
-      <p>
-        When I say mental model, I mean this: the majority of Nigerian software engineers
-        think of themselves as executers. Someone brings a problem, they build a solution.
-        The better ones do this faster and cleaner. But the fundamental transaction is the
-        same — value flows from execution. You build what you are told to build.
-      </p>
-      <p>
-        That is a ceiling. Most developers don't see it until they've hit their head on it
-        a few times.
-      </p>
+    <div className="text-smoke text-sm leading-relaxed">
 
-      <div className="border-t border-rim pt-8">
+      <ArticleImage
+        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80"
+        alt="Developer working on code"
+        caption="Photo: Unsplash"
+      />
+
+      <div className="space-y-4 mt-8">
+        <p className="text-fog text-base leading-relaxed">
+          Most Nigerian developers I know are excellent at their craft. They can architect
+          APIs, design databases, and ship features under pressure. The code is rarely the problem.
+        </p>
+        <p>The problem is the mental model behind it.</p>
+        <p>
+          When I say mental model, I mean this: the majority of Nigerian software engineers
+          think of themselves as executers. Someone brings a problem, they build a solution.
+          The better ones do this faster and cleaner. But the fundamental transaction is the
+          same — value flows from execution. You build what you are told to build.
+        </p>
+        <p>
+          That is a ceiling. Most developers don't see it until they've hit their head on it
+          a few times.
+        </p>
+      </div>
+
+      <div className="border-t border-rim pt-8 mt-10">
         <h2 className="font-display font-light text-fog text-2xl lg:text-3xl mb-5">
           The services trap
         </h2>
@@ -59,9 +100,13 @@ function AfricanDevelopersContent() {
             employment with more admin and less certainty. And it has a hard ceiling.
           </p>
         </div>
+
+        <PullQuote>
+          A services business is structurally incapable of compounding. You are the product.
+        </PullQuote>
       </div>
 
-      <div className="border-t border-rim pt-8">
+      <div className="border-t border-rim pt-8 mt-10">
         <h2 className="font-display font-light text-fog text-2xl lg:text-3xl mb-5">
           The shift nobody teaches
         </h2>
@@ -95,7 +140,7 @@ function AfricanDevelopersContent() {
         </div>
       </div>
 
-      <div className="border-t border-rim pt-8">
+      <div className="border-t border-rim pt-8 mt-10">
         <h2 className="font-display font-light text-fog text-2xl lg:text-3xl mb-5">
           What the shift actually feels like
         </h2>
@@ -122,9 +167,15 @@ function AfricanDevelopersContent() {
             worth owning?"
           </p>
         </div>
+
+        <ArticleImage
+          src="https://images.unsplash.com/photo-3wxK_wGVfcI?w=1200&q=80"
+          alt="A group of people collaborating around a table"
+          caption="The shift from contractor to stakeholder changes everything about how you work."
+        />
       </div>
 
-      <div className="border-t border-rim pt-8">
+      <div className="border-t border-rim pt-8 mt-10">
         <h2 className="font-display font-light text-fog text-2xl lg:text-3xl mb-5">
           The opportunity is larger than most people realise
         </h2>
@@ -148,9 +199,13 @@ function AfricanDevelopersContent() {
             claiming the problem, not just executing the solution.
           </p>
         </div>
+
+        <PullQuote>
+          The opportunity isn't to re-skin what already exists. It's to understand the specific shape of problems here — and build for that.
+        </PullQuote>
       </div>
 
-      <div className="border-t border-rim pt-8">
+      <div className="border-t border-rim pt-8 mt-10">
         <h2 className="font-display font-light text-fog text-2xl lg:text-3xl mb-5">
           This isn't a call to quit your job
         </h2>
@@ -175,6 +230,7 @@ function AfricanDevelopersContent() {
           <p className="text-fog font-medium">Now you know.</p>
         </div>
       </div>
+
     </div>
   );
 }
@@ -186,7 +242,7 @@ export const articles: Article[] = [
     title: 'Why African developers need to think in products, not just code',
     excerpt:
       'The shift from hired hand to product thinker is the most important move a Nigerian software engineer can make — and most never make it.',
-    date: 'June 12, 2025',
+    date: 'July 16, 2026',
     readTime: '6 min',
     featured: true,
     published: true,
