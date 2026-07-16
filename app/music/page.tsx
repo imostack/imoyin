@@ -62,8 +62,7 @@ export default function MusicPage() {
             <p className="text-fog text-lg lg:text-xl leading-relaxed">
               Jimmy Sampson is the musical identity of Imoyin Sampson.
               A saxophonist and live performer based in Port Harcourt, Nigeria —
-              performing since 2010, and now recording. The discipline behind the
-              engineering and the discipline behind the saxophone are the same thing.
+              performing and recording for over a decade. As my musical journey continues, I am constantly exploring new sounds, collaborating with talented artists, and sharing my passion for music with the world.
             </p>
           </AnimatedSection>
         </div>
@@ -151,10 +150,10 @@ export default function MusicPage() {
               <p className="text-smoke text-sm leading-relaxed mb-8 max-w-md">
                 Working with young musicians who are serious about their instrument.
                 If you are navigating the gap between raw talent and refined craft,
-                this programme is for you.
+                this programme is for you. Just hit the button below to send a mail with your name and a brief description of your musical journey so far.
               </p>
               <a
-                href="mailto:music@imoyinsampson.com"
+                href="mailto:mentorship@imoyinsampson.com"
                 className="inline-flex items-center gap-2 text-sm text-amber hover:opacity-80 transition-opacity tracking-wide"
               >
                 Get in touch →
