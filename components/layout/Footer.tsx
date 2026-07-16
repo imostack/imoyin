@@ -64,9 +64,14 @@ export function Footer() {
         </div>
 
         <div className="border-t border-rim pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5">
-          <p className="font-code text-xs text-faint tracking-wide">
-            © {new Date().getFullYear()} Imoyin Sampson
-          </p>
+          <div className="flex items-center gap-5">
+            <p className="font-code text-xs text-faint tracking-wide">
+              © {new Date().getFullYear()} Imoyin Sampson
+            </p>
+            <Link href="/privacy" className="font-code text-xs text-faint hover:text-smoke transition-colors tracking-wide">
+              Privacy
+            </Link>
+          </div>
           <div className="flex items-center gap-5">
             {socials.map(({ Icon, label, href }) => (
               <a
