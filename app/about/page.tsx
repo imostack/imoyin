@@ -99,7 +99,7 @@ export default function AboutPage() {
                 />
               </div>
               <p className="font-code text-[11px] text-faint mt-3">
-                Imoyin Sampson · Port Harcourt, Nigeria
+                Ịmọyin Sampson · Port Harcourt, Nigeria
               </p>
             </AnimatedSection>
           </div>
