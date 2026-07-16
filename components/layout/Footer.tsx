@@ -31,7 +31,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <p className="font-display text-fog text-4xl font-light leading-tight mb-4">
-              Imoyin<br />
+              Ịmọyin<br />
               <span className="text-amber">Sampson</span>
             </p>
             <p className="text-smoke text-sm leading-relaxed max-w-xs mt-3">
