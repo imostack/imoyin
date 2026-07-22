@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { ContactForm } from '@/components/contact/ContactForm';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, ArrowRight } from 'lucide-react';
 import { LinkedInIcon, GitHubIcon, InstagramIcon } from '@/components/ui/SocialIcons';
 
 export const metadata: Metadata = {
@@ -48,6 +49,25 @@ export default function ContactPage() {
             {/* Info sidebar */}
             <div className="lg:col-span-2 space-y-10">
               <AnimatedSection>
+                <div className="border border-amber/20 bg-amber/[0.03] p-6 mb-10">
+                  <p className="font-code text-[11px] text-amber tracking-widest uppercase mb-2">
+                    Starting a software project?
+                  </p>
+                  <p className="text-sm text-fog font-medium mb-3">
+                    Use the Project Discovery Questionnaire instead
+                  </p>
+                  <p className="font-code text-[11px] text-smoke leading-relaxed mb-4">
+                    A structured brief that gets me straight to a proposal, skipping
+                    the back-and-forth.
+                  </p>
+                  <Link
+                    href="/project-discovery"
+                    className="inline-flex items-center gap-1.5 font-code text-[11px] text-amber hover:opacity-80 transition-opacity"
+                  >
+                    Start the questionnaire
+                    <ArrowRight size={11} />
+                  </Link>
+                </div>
                 <h2 className="font-display font-light text-fog text-3xl mb-6">
                   Get in touch
                 </h2>

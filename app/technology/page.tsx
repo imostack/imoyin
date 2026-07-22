@@ -66,7 +66,7 @@ export default function TechnologyPage() {
           </AnimatedSection>
           <AnimatedSection delay={0.15} className="max-w-2xl">
             <p className="text-smoke text-lg leading-relaxed">
-              Building software that runs in production,
+              Product architecture first, then software that runs in production —
               shipping features, absorbing traffic, surviving incidents,
               and handling the edge cases that nobody specified.
               I write code that future engineers can reason about.
@@ -84,6 +84,13 @@ export default function TechnologyPage() {
                 Approach
               </p>
               <div className="space-y-4 text-smoke text-sm leading-relaxed prose-site">
+                <p>
+                  Most of the real work happens before a line of code is written —
+                  deciding what the system needs to be, where the boundaries sit,
+                  and how it fails. That's product architecture, and it's the part
+                  clients are usually paying for even when they think they're paying
+                  for code.
+                </p>
                 <p>
                   I'm not interested in clever code. I'm interested in code that a team
                   can modify safely six months after it's been shipped. That means clear

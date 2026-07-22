@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const META_TITLE = 'Imoyin Sampson — Software Engineer & Co-founder';
 const META_DESC =
-  'Software engineer and co-founder at App Guts. Building products and companies from Port Harcourt, Nigeria.';
+  'Software engineer, product architect, and co-founder at App Guts. Building products and companies from Port Harcourt, Nigeria.';
 const META_URL = 'https://imoyinsampson.com';
 
 export const metadata: Metadata = {
@@ -104,7 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 'https://www.instagram.com/imoyins',
                 'https://audiomack.com/jismusic',
               ],
-              jobTitle: 'Software Engineer & Co-founder',
+              jobTitle: 'Software Engineer, Product Architect & Co-founder',
               worksFor: {
                 '@type': 'Organization',
                 name: 'App Guts',
@@ -112,6 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               },
               knowsAbout: [
                 'Software Engineering',
+                'Product Architecture',
                 'SaaS Products',
                 'Startup Founding',
                 'Product Development',

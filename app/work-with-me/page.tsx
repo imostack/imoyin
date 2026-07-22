@@ -11,6 +11,13 @@ export const metadata: Metadata = {
 
 const engagements = [
   {
+    title: 'Custom Software Development',
+    description:
+      "Full product builds and product architecture for businesses that need software done right the first time. Start with the Project Discovery Questionnaire — a structured brief that replaces the intro call.",
+    context: 'Web · Mobile · SaaS · Platforms',
+    href: '/project-discovery',
+  },
+  {
     title: 'Speaking',
     description:
       'Keynote and panel conversations on technology, entrepreneurship, and building companies in Africa. I speak from experience, not from slide decks.',
@@ -124,15 +131,25 @@ export default function WorkWithMePage() {
             </h2>
             <p className="text-smoke text-sm leading-relaxed mb-8">
               Tell me briefly what you're working on and what you're looking for.
-              If it's a fit, we'll find time to talk.
+              If it's a fit, we'll find time to talk. Already know you want custom
+              software built? Skip ahead to the discovery questionnaire.
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-amber text-canvas text-sm font-medium px-6 py-3 hover:opacity-90 transition-opacity"
-            >
-              Send a message
-              <ArrowRight size={14} />
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/project-discovery"
+                className="inline-flex items-center gap-2 bg-amber text-canvas text-sm font-medium px-6 py-3 hover:opacity-90 transition-opacity"
+              >
+                Start a project
+                <ArrowRight size={14} />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 border border-rim text-fog text-sm px-6 py-3 hover:border-amber hover:text-amber transition-colors"
+              >
+                Send a message
+                <ArrowRight size={14} />
+              </Link>
+            </div>
           </AnimatedSection>
         </div>
       </section>

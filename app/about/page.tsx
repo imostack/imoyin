@@ -39,10 +39,10 @@ export default function AboutPage() {
               <span className="text-amber">job description</span>
             </h1>
             <p className="text-smoke text-lg leading-relaxed max-w-2xl">
-              Software engineer and co-founder based in Port Harcourt, Nigeria. I build
-              products at App Guts, work in the oil and gas industry, and have performed
-              as a saxophonist under the name Jimmy Sampson since 2010. All three require
-              the same thing: precision, commitment, and showing up.
+              Software engineer, product architect, and co-founder based in Port Harcourt,
+              Nigeria. I build products at App Guts, work in the oil and gas industry, and
+              have performed as a saxophonist under the name Jimmy Sampson since 2010. All
+              three require the same thing: precision, commitment, and showing up.
             </p>
           </AnimatedSection>
         </div>
