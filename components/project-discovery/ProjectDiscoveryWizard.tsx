@@ -1,5 +1,5 @@
 'use client';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, Send } from 'lucide-react';
 import {
   INITIAL_DISCOVERY_DATA,
@@ -61,6 +61,8 @@ export function ProjectDiscoveryWizard() {
   const [errorMsg, setErrorMsg] = useState('');
   const [hydrated, setHydrated] = useState(false);
   const [visible, setVisible] = useState(true);
+  const stepTopRef = useRef<HTMLDivElement>(null);
+  const isFirstStepRender = useRef(true);
 
   const visibleSteps = useMemo(
     () => STEP_META.filter(s => !s.isVisible || s.isVisible(data)),
@@ -100,6 +102,21 @@ export function ProjectDiscoveryWizard() {
     setVisible(false);
     const frame = requestAnimationFrame(() => setVisible(true));
     return () => cancelAnimationFrame(frame);
+  }, [safeIndex]);
+
+  // Scroll to the top of the step (not the page) whenever the step changes,
+  // so a short step after a long one doesn't leave the user stranded mid-page.
+  useEffect(() => {
+    if (isFirstStepRender.current) {
+      isFirstStepRender.current = false;
+      return;
+    }
+    const el = stepTopRef.current;
+    if (!el) return;
+    const nav = document.querySelector('header');
+    const offset = (nav?.getBoundingClientRect().height ?? 64) + 24;
+    const top = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
   }, [safeIndex]);
 
   const update = useCallback(
@@ -179,7 +196,7 @@ export function ProjectDiscoveryWizard() {
   const isReview = current.id === 'review';
 
   return (
-    <div>
+    <div ref={stepTopRef}>
       {/* Honeypot */}
       <input
         type="text"
