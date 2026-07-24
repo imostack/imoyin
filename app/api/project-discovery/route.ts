@@ -130,6 +130,7 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: 'Imoyin Sampson <contact@imoyinsampson.com>',
       to: 'hello@imoyinsampson.com',
+      bcc: 'sampsonimoyin@gmail.com',
       replyTo: data.email,
       subject: `Project Discovery — ${data.companyName?.trim() || data.fullName}`,
       text: buildEmailBody(data, fileMeta),
