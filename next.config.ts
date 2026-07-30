@@ -2,13 +2,14 @@ import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV !== 'production';
 
-// Hash of the inline theme-detection script in app/layout.tsx — recompute
-// this if that script's contents ever change.
-const THEME_SCRIPT_HASH = "'sha256-o07hMxxN8Tb3nZMnC+oUR89OfN6MVGKAhAsnMjmc7Lo='";
-
+// Next.js's App Router injects its own per-request inline scripts to stream
+// RSC hydration data (self.__next_f.push(...)) — their content varies per
+// request, so they can't be pinned with a static hash like the old
+// theme-detection-script approach. A hashed/nonce-only script-src blocks
+// those and silently breaks hydration (page renders, JS never runs).
 const CSP = [
   "default-src 'self'",
-  `script-src 'self' ${THEME_SCRIPT_HASH}`,
+  "script-src 'self' 'unsafe-inline'",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https://res.cloudinary.com https://images.unsplash.com",
   "font-src 'self'",
