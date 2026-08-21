@@ -60,9 +60,10 @@ export default function MusicPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <AnimatedSection className="max-w-2xl">
             <p className="text-fog text-lg lg:text-xl leading-relaxed">
-              Jimmy Sampson is the musical identity of Imoyin Sampson.
-              A saxophonist and live performer based in Port Harcourt, Nigeria —
-              performing and recording for over a decade. As my musical journey continues, I am constantly exploring new sounds, collaborating with talented artists, and sharing my passion for music with the world.
+              Jimmy Sampson is the musical identity of Imoyin Sampson —
+              a saxophonist and live performer based in Port Harcourt, Nigeria,
+              performing and recording since 2010. It runs on the same discipline
+              as the engineering: precision, commitment, and showing up.
             </p>
           </AnimatedSection>
         </div>
@@ -72,8 +73,11 @@ export default function MusicPage() {
       <section className="py-16 bg-canvas border-b border-rim">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <AnimatedSection className="mb-6">
-            <p className="font-code text-[11px] tracking-widest uppercase text-smoke">
+            <p className="font-code text-[11px] tracking-widest uppercase text-smoke mb-2">
               Listen
+            </p>
+            <p className="text-fog text-sm">
+              Latest release: <span className="text-amber">Mission EP</span>
             </p>
           </AnimatedSection>
           <AnimatedSection>
@@ -99,7 +103,7 @@ export default function MusicPage() {
       </section>
 
       {/* Featured Performance */}
-      <section className="py-20 lg:py-28 border-b border-rim">
+      <section className="py-20 lg:py-28 bg-surface border-b border-rim">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <AnimatedSection className="mb-8">
             <p className="font-code text-[11px] tracking-widest uppercase text-smoke">
@@ -150,13 +154,14 @@ export default function MusicPage() {
               <p className="text-smoke text-sm leading-relaxed mb-8 max-w-md">
                 Working with young musicians who are serious about their instrument.
                 If you are navigating the gap between raw talent and refined craft,
-                this programme is for you. Just hit the button below to send a mail with your name and a brief description of your musical journey so far.
+                this programme is for you. Send your name and a brief description
+                of your musical journey so far.
               </p>
               <a
                 href="mailto:mentorship@imoyinsampson.com"
-                className="inline-flex items-center gap-2 text-sm text-amber hover:opacity-80 transition-opacity tracking-wide"
+                className="inline-flex items-center gap-2 bg-amber text-canvas text-sm font-medium px-6 py-3 hover:opacity-90 transition-opacity"
               >
-                Get in touch →
+                Apply for Mentorship
               </a>
             </div>
           </AnimatedSection>
