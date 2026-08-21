@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
+import { UpcomingEvent } from '@/components/speaking/UpcomingEvent';
 import { ArrowUpRight, BookOpen, Mic, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -103,6 +104,9 @@ export default function SpeakingPage() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* Upcoming event — auto-updates from the EventsKona organizer profile */}
+      <UpcomingEvent organizerSlug="imoyin-sampson" />
 
       {/* Topics */}
       <section className="bg-surface border-b border-rim py-20 lg:py-28">

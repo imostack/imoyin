@@ -11,6 +11,7 @@ const nav = {
   Explore: [
     { label: 'About',    href: '/about' },
     { label: 'Insights', href: '/insights' },
+    { label: 'Speaking', href: '/speaking' },
     { label: 'Music',    href: '/music' },
     { label: 'Contact',  href: '/contact' },
   ],

@@ -10,6 +10,7 @@ const links = [
   { label: 'Technology', href: '/technology' },
   { label: 'Ventures',   href: '/ventures' },
   { label: 'Insights',   href: '/insights' },
+  { label: 'Speaking',   href: '/speaking' },
   { label: 'Music',      href: '/music' },
 ];
 
