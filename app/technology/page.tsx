@@ -33,7 +33,7 @@ const projects = [
     category: 'Consumer SaaS · Ticketing',
     description:
       'Full-stack event management system built for the Nigerian market: event creation, dynamic pricing, online ticketing with Paystack, real-time capacity management, attendee check-in, and post-event analytics dashboards.',
-    outcome: '150+ users since April 2026 launch. Features no comparable regional platform offers. Sub-200ms API response times under load.',
+    outcome: '230+ users and 10,000+ all-time views since April 2026 launch, with several events successfully hosted on the platform. Features no comparable regional platform offers. Sub-200ms API response times under load.',
     year: 'Apr 2026–Present',
     stack: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Paystack', 'Redis'],
   },

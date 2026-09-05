@@ -12,7 +12,7 @@ const STACK = [
 const METRICS = [
   { value: '2020',  label: 'Year I started shipping software'    },
   { value: '2',     label: 'Active ventures — App Guts & more'   },
-  { value: '150+',  label: 'EventsKona users and growing'        },
+  { value: '230+',  label: 'EventsKona users and growing'        },
   { value: '2026',  label: 'EventsKona launched'                 },
 ];
 

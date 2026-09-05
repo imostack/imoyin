@@ -25,7 +25,7 @@ const ventures = [
     description:
       'App Guts\' flagship SaaS product. A smart event ticketing and discovery platform built specifically for the Nigerian market — with features and workflows no comparable regional platform currently offers.',
     metrics: [
-      { v: '150+',      l: 'Users and growing'   },
+      { v: '230+',      l: 'Users and growing'   },
       { v: 'Apr 2026',  l: 'Launched'            },
       { v: 'Nigeria',   l: 'Primary market'      },
     ],

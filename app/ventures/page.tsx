@@ -137,8 +137,9 @@ export default function VenturesPage() {
                   EventsKona addresses that gap. Organisers get a complete platform:
                   event creation, ticketing, discovery, attendee management, and
                   analytics. Attendees get a native experience for finding and
-                  booking events. We're building the user base now, focused on
-                  getting the product experience right before we push for scale.
+                  booking events. The platform has already hosted successful events
+                  and crossed 230+ users and 10,000+ all-time views — we're scaling
+                  from a strong product foundation, not a hypothesis.
                 </p>
               </div>
 
@@ -159,7 +160,8 @@ export default function VenturesPage() {
               <div className="space-y-0 divide-y divide-rim mb-8">
                 {[
                   { label: 'Launched',    value: 'April 2026' },
-                  { label: 'Users',       value: '150+ and growing' },
+                  { label: 'Users',       value: '230+ and growing' },
+                  { label: 'All-time views', value: '10,000+' },
                   { label: 'Model',       value: 'SaaS · Ticketing platform' },
                   { label: 'Market',      value: 'Nigeria (expanding)' },
                   { label: 'Status',      value: 'Active — growing user base' },
