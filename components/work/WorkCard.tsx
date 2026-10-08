@@ -81,10 +81,11 @@ export function WorkCard({ item, compact, preload }: WorkCardProps) {
     </>
   );
 
-  if (!item.url) return <div>{body}</div>;
+  // The slug doubles as an anchor so "Trusted by" logos can link to a card on /work
+  if (!item.url) return <div id={item.slug} className="scroll-mt-28">{body}</div>;
 
   return (
-    <a href={item.url} target="_blank" rel="noopener noreferrer" className="group block">
+    <a id={item.slug} href={item.url} target="_blank" rel="noopener noreferrer" className="group block scroll-mt-28">
       {body}
     </a>
   );

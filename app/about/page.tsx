@@ -60,7 +60,8 @@ export default function AboutPage() {
                 <p>
                   Around 2010 I wrote my first lines of code — Java — then set it aside.
                   I came back properly in 2020 and moved fast. I founded Alprosel Tech,
-                  a web development services business, and started shipping real products.
+                  a web development services business, and started shipping real products,
+                  and spent part of 2021 as a web and graphic designer at Centrifuge Group.
                   By 2024 the model had run its course: services businesses don't scale the
                   way I wanted to build. I dissolved Alprosel Tech and came on as
                   co-founder at App Guts.
