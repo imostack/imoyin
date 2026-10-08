@@ -7,6 +7,7 @@ import { useScrolled } from '@/hooks/useScrolled';
 
 const links = [
   { label: 'About',      href: '/about' },
+  { label: 'Work',       href: '/work' },
   { label: 'Technology', href: '/technology' },
   { label: 'Ventures',   href: '/ventures' },
   { label: 'Insights',   href: '/insights' },

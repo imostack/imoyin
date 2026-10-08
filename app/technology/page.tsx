@@ -43,7 +43,7 @@ const projects = [
     description:
       'Collaborative build — a fleet tracking and operations dashboard for a supply chain business. WebSocket-based real-time vehicle positions, route adherence monitoring, SLA tracking, and automated exception alerts.',
     outcome: 'Live tracking across 3 cities. Currently in beta testing ahead of full launch.',
-    year: '2022',
+    year: 'In beta',
     stack: ['React', 'WebSockets', 'Node.js', 'Mapbox', 'PostgreSQL'],
   },
 ];
@@ -149,6 +149,11 @@ export default function TechnologyPage() {
               style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
               Projects that tell the story
             </h2>
+            <Link href="/work"
+              className="inline-flex items-center gap-2 text-xs text-smoke hover:text-amber transition-colors tracking-widest uppercase mt-6">
+              See client work
+              <ArrowUpRight size={12} />
+            </Link>
           </AnimatedSection>
 
           <div className="divide-y divide-rim">

@@ -6,14 +6,14 @@ import { ArrowRight } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Work With Me',
   description:
-    'Speaking, advisory, startup conversations, and strategic partnerships with Imoyin Sampson.',
+    'Custom software and websites by appointment, plus speaking, advisory, startup conversations, and strategic partnerships with Imoyin Sampson.',
 };
 
 const engagements = [
   {
     title: 'Custom Software Development',
     description:
-      "Full product builds and product architecture for businesses that need software done right the first time. Start with the Project Discovery Questionnaire — a structured brief that replaces the intro call.",
+      "Websites, platforms and full product builds for businesses that need software done right the first time. I take on a limited number of client projects, by appointment — send a short project brief (about three minutes) and I'll get back to you to book a call.",
     context: 'Web · Mobile · SaaS · Platforms',
     href: '/project-discovery',
   },
@@ -131,15 +131,17 @@ export default function WorkWithMePage() {
             </h2>
             <p className="text-smoke text-sm leading-relaxed mb-8">
               Tell me briefly what you're working on and what you're looking for.
-              If it's a fit, we'll find time to talk. Already know you want custom
-              software built? Skip ahead to the discovery questionnaire.
+              If it's a fit, we'll find time to talk. Need something built? Client
+              work is by appointment — send a short project brief and I&apos;ll reply to
+              book a call. You can see{' '}
+              <Link href="/work" className="text-amber hover:opacity-80">past client work here</Link>.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/project-discovery"
                 className="inline-flex items-center gap-2 bg-amber text-canvas text-sm font-medium px-6 py-3 hover:opacity-90 transition-opacity"
               >
-                Start a project
+                Book a consultation
                 <ArrowRight size={14} />
               </Link>
               <Link

@@ -66,8 +66,9 @@ export default function VenturesPage() {
                 <p>
                   The distinction matters. A services business grows by taking on more
                   clients. A SaaS company builds something once and lets it grow. That's
-                  the model. App Guts isn't looking for dev contracts — the team is
-                  building software that earns its keep.
+                  the model. Client work still happens — selectively, and{' '}
+                  <Link href="/work" className="text-amber hover:opacity-80">by appointment</Link>{' '}
+                  — but the centre of gravity is software that earns its keep.
                 </p>
                 <p>
                   EventsKona is the first product out of App Guts. It won't be the last.
