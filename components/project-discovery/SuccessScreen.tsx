@@ -21,9 +21,8 @@ export function SuccessScreen({ name }: SuccessScreenProps) {
         Thank you, {firstName}.
       </h2>
       <p className="text-smoke text-sm leading-relaxed max-w-md mb-10">
-        I&apos;ve received the full brief. I personally review every submission and
-        will follow up within 48 hours with next steps — usually a short call to
-        confirm scope before I put together a proposal.
+        Your brief is in. I personally read every one and will reply within 48
+        hours to book a call — check your inbox (and spam folder, just in case).
       </p>
       <Link
         href="/"

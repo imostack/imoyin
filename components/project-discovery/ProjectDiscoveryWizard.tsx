@@ -4,30 +4,26 @@ import { ArrowLeft, ArrowRight, Send } from 'lucide-react';
 import {
   INITIAL_DISCOVERY_DATA,
   isLogisticsProject,
-  validateContactStep,
-  validateBusinessStep,
-  validateProjectTypeStep,
-  validateGoalsStep,
+  validateNeedStep,
+  validateProjectStep,
   validateTimelineBudgetStep,
+  validateContactStep,
   type DiscoveryFormData,
   type StepErrors,
 } from '@/lib/project-discovery';
 import { ProgressBar } from './ProgressBar';
 import { SuccessScreen } from './SuccessScreen';
 import type { UploadedFile } from './FileDropzone';
-import { ContactStep } from './steps/ContactStep';
-import { BusinessStep } from './steps/BusinessStep';
-import { ProjectTypeStep } from './steps/ProjectTypeStep';
-import { CurrentSituationStep } from './steps/CurrentSituationStep';
-import { GoalsStep } from './steps/GoalsStep';
-import { FeaturesStep } from './steps/FeaturesStep';
+import { NeedStep } from './steps/NeedStep';
+import { ProjectStep } from './steps/ProjectStep';
 import { LogisticsStep } from './steps/LogisticsStep';
-import { AssetsStep } from './steps/AssetsStep';
-import { IntegrationsStep } from './steps/IntegrationsStep';
 import { TimelineBudgetStep } from './steps/TimelineBudgetStep';
+import { ContactStep } from './steps/ContactStep';
 import { ReviewStep } from './steps/ReviewStep';
 
-const DRAFT_KEY = 'project-discovery-draft-v1';
+// v2: the form was restructured, so v1 drafts no longer map onto it
+const DRAFT_KEY = 'project-discovery-draft-v2';
+const LEGACY_DRAFT_KEY = 'project-discovery-draft-v1';
 
 interface StepMeta {
   id: string;
@@ -37,16 +33,11 @@ interface StepMeta {
 }
 
 const STEP_META: StepMeta[] = [
-  { id: 'contact', label: 'Contact', validate: validateContactStep },
-  { id: 'business', label: 'Business', validate: validateBusinessStep },
-  { id: 'project-type', label: 'Project Type', validate: validateProjectTypeStep },
-  { id: 'current-situation', label: 'Current Situation' },
-  { id: 'goals', label: 'Goals', validate: validateGoalsStep },
-  { id: 'features', label: 'Features' },
+  { id: 'need', label: 'What you need', validate: validateNeedStep },
+  { id: 'project', label: 'Your project', validate: validateProjectStep },
   { id: 'logistics', label: 'Logistics', isVisible: isLogisticsProject },
-  { id: 'assets', label: 'Assets' },
-  { id: 'integrations', label: 'Integrations' },
-  { id: 'timeline-budget', label: 'Timeline & Budget', validate: validateTimelineBudgetStep },
+  { id: 'timeline-budget', label: 'Timeline & budget', validate: validateTimelineBudgetStep },
+  { id: 'contact', label: 'Your details', validate: validateContactStep },
   { id: 'review', label: 'Review' },
 ];
 
@@ -61,7 +52,7 @@ export function ProjectDiscoveryWizard() {
   const [errorMsg, setErrorMsg] = useState('');
   const [hydrated, setHydrated] = useState(false);
   const [visible, setVisible] = useState(true);
-  const stepTopRef = useRef<HTMLDivElement>(null);
+  const stepTopRef = useRef<HTMLFormElement>(null);
   const isFirstStepRender = useRef(true);
 
   const visibleSteps = useMemo(
@@ -84,6 +75,7 @@ export function ProjectDiscoveryWizard() {
     } catch {
       // ignore malformed draft
     }
+    localStorage.removeItem(LEGACY_DRAFT_KEY);
     setHydrated(true);
   }, []);
 
@@ -119,9 +111,25 @@ export function ProjectDiscoveryWizard() {
     window.scrollTo({ top, behavior: 'smooth' });
   }, [safeIndex]);
 
+  // Take the user straight to the first thing that needs fixing
+  useEffect(() => {
+    if (Object.keys(errors).length === 0) return;
+    const field = stepTopRef.current?.querySelector<HTMLElement>('[data-invalid="true"]');
+    if (!field) return;
+    field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    field.querySelector<HTMLElement>('input, textarea, button')?.focus({ preventScroll: true });
+  }, [errors]);
+
   const update = useCallback(
     <K extends keyof DiscoveryFormData>(key: K, value: DiscoveryFormData[K]) => {
       setData(prev => ({ ...prev, [key]: value }));
+      // Clear a field's error as soon as the user changes it
+      setErrors(prev => {
+        if (!(key in prev)) return prev;
+        const rest = { ...prev };
+        delete rest[key];
+        return rest;
+      });
     },
     []
   );
@@ -196,7 +204,16 @@ export function ProjectDiscoveryWizard() {
   const isReview = current.id === 'review';
 
   return (
-    <div ref={stepTopRef}>
+    // A real form so Enter in a single-line field moves on (or sends, on Review)
+    <form
+      ref={stepTopRef}
+      noValidate
+      onSubmit={e => {
+        e.preventDefault();
+        if (!isReview) goNext();
+        else if (status !== 'submitting') void handleSubmit();
+      }}
+    >
       {/* Honeypot */}
       <input
         type="text"
@@ -228,24 +245,21 @@ export function ProjectDiscoveryWizard() {
           transition: 'opacity 0.35s ease, transform 0.35s ease',
         }}
       >
-        {current.id === 'contact' && <ContactStep data={data} update={update} errors={errors} />}
-        {current.id === 'business' && <BusinessStep data={data} update={update} errors={errors} />}
-        {current.id === 'project-type' && (
-          <ProjectTypeStep data={data} update={update} errors={errors} />
+        {current.id === 'need' && <NeedStep data={data} update={update} errors={errors} />}
+        {current.id === 'project' && (
+          <ProjectStep
+            data={data}
+            update={update}
+            errors={errors}
+            files={files}
+            onFilesChange={setFiles}
+          />
         )}
-        {current.id === 'current-situation' && (
-          <CurrentSituationStep data={data} update={update} errors={errors} />
-        )}
-        {current.id === 'goals' && <GoalsStep data={data} update={update} errors={errors} />}
-        {current.id === 'features' && <FeaturesStep data={data} update={update} errors={errors} />}
         {current.id === 'logistics' && <LogisticsStep data={data} update={update} errors={errors} />}
-        {current.id === 'assets' && <AssetsStep files={files} onFilesChange={setFiles} />}
-        {current.id === 'integrations' && (
-          <IntegrationsStep data={data} update={update} errors={errors} />
-        )}
         {current.id === 'timeline-budget' && (
           <TimelineBudgetStep data={data} update={update} errors={errors} />
         )}
+        {current.id === 'contact' && <ContactStep data={data} update={update} errors={errors} />}
         {isReview && (
           <ReviewStep data={data} files={files} onEditStep={goToStep} errorMsg={errorMsg} />
         )}
@@ -264,18 +278,16 @@ export function ProjectDiscoveryWizard() {
 
         {isReview ? (
           <button
-            type="button"
-            onClick={handleSubmit}
+            type="submit"
             disabled={status === 'submitting'}
             className="inline-flex items-center gap-3 bg-amber text-canvas text-sm font-medium px-8 py-4 hover:opacity-90 transition-opacity group disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            {status === 'submitting' ? 'Submitting…' : 'Submit Questionnaire'}
+            {status === 'submitting' ? 'Sending…' : 'Send brief'}
             <Send size={14} className="transition-transform group-hover:translate-x-0.5" />
           </button>
         ) : (
           <button
-            type="button"
-            onClick={goNext}
+            type="submit"
             className="inline-flex items-center gap-2 bg-amber text-canvas text-sm font-medium px-7 py-3.5 hover:opacity-90 transition-opacity group"
           >
             Continue
@@ -283,6 +295,6 @@ export function ProjectDiscoveryWizard() {
           </button>
         )}
       </div>
-    </div>
+    </form>
   );
 }

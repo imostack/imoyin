@@ -1,5 +1,5 @@
 'use client';
-import { SelectGrid, TextField, TextAreaField, StepIntro } from '../fields';
+import { ChoiceChips, TextField, TextAreaField, StepIntro } from '../fields';
 import { LOGISTICS_PORTAL_OPTIONS, LOGISTICS_WORKFLOW_OPTIONS } from '@/lib/project-discovery';
 import type { StepProps } from '../types';
 
@@ -7,39 +7,37 @@ export function LogisticsStep({ data, update }: StepProps) {
   return (
     <div>
       <StepIntro
-        eyebrow="07 — Logistics Platform"
-        title="A few logistics-specific details."
-        description="You selected Logistics Platform — this helps me scope the parts that are unique to fleet and delivery operations."
+        title="A few logistics details."
+        description="You picked Logistics Platform, so a couple of quick taps here help me scope it. All optional."
       />
-      <div className="space-y-8">
-        <SelectGrid
+      <div className="space-y-10">
+        <ChoiceChips
           label="Portals needed"
+          name="logisticsPortals"
           options={LOGISTICS_PORTAL_OPTIONS}
           value={data.logisticsPortals}
           onChange={v => update('logisticsPortals', v)}
-          columns="sm:grid-cols-2 lg:grid-cols-3"
         />
-        <SelectGrid
+        <ChoiceChips
           label="Workflow requirements"
+          name="logisticsWorkflow"
           options={LOGISTICS_WORKFLOW_OPTIONS}
           value={data.logisticsWorkflow}
           onChange={v => update('logisticsWorkflow', v)}
-          columns="sm:grid-cols-2 lg:grid-cols-3"
         />
         <TextField
           label="Pricing model"
           name="logisticsPricingModel"
           value={data.logisticsPricingModel}
           onChange={v => update('logisticsPricingModel', v)}
-          placeholder="e.g. per km, flat rate, negotiated, commission"
+          placeholder="e.g. per km, flat rate, commission"
         />
         <TextAreaField
-          label="Describe any custom workflow"
+          label="Anything unique about how you operate?"
           name="logisticsCustomWorkflow"
-          rows={4}
+          rows={3}
           value={data.logisticsCustomWorkflow}
           onChange={v => update('logisticsCustomWorkflow', v)}
-          placeholder="Anything specific to how your operation runs"
         />
       </div>
     </div>

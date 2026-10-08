@@ -3,11 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import {
   INITIAL_DISCOVERY_DATA,
   buildEmailBody,
-  validateContactStep,
-  validateBusinessStep,
-  validateProjectTypeStep,
-  validateGoalsStep,
-  validateTimelineBudgetStep,
+  ALL_VALIDATORS,
   MAX_FILES,
   MAX_FILE_BYTES,
   MAX_TOTAL_BYTES,
@@ -36,14 +32,7 @@ function isRateLimited(ip: string): boolean {
 }
 
 function firstError(data: DiscoveryFormData): string | null {
-  const validators = [
-    validateContactStep,
-    validateBusinessStep,
-    validateProjectTypeStep,
-    validateGoalsStep,
-    validateTimelineBudgetStep,
-  ];
-  for (const validate of validators) {
+  for (const validate of ALL_VALIDATORS) {
     const errors = validate(data);
     const message = Object.values(errors)[0];
     if (message) return message;

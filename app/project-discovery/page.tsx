@@ -4,9 +4,9 @@ import { ProjectDiscoveryWizard } from '@/components/project-discovery/ProjectDi
 import { Clock, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Project Discovery Questionnaire',
+  title: 'Book a Consultation',
   description:
-    'Start a custom software engagement with Imoyin Sampson — Founder, Software Engineer, and Product Architect. A structured discovery process covering business context, scope, and requirements.',
+    'Book a consultation with Imoyin Sampson for a website, app or custom software project. Send a short project brief — about three minutes — and get a reply to book a call.',
 };
 
 export default function ProjectDiscoveryPage() {
@@ -17,21 +17,19 @@ export default function ProjectDiscoveryPage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-12">
           <AnimatedSection>
             <p className="font-code text-[11px] tracking-widest uppercase text-smoke mb-8">
-              Project Discovery Questionnaire
+              Book a consultation
             </p>
             <h1 className="font-display font-light text-fog leading-[0.95] mb-8"
               style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)' }}>
-              Before a proposal,<br />
-              <span className="text-amber">I need to understand the business.</span>
+              Tell me what you need.<br />
+              <span className="text-amber">I&apos;ll take it from there.</span>
             </h1>
           </AnimatedSection>
           <AnimatedSection delay={0.15} className="max-w-2xl">
             <p className="text-smoke text-lg leading-relaxed mb-8">
-              I&apos;m Imoyin Sampson — Founder, Software Engineer, and Product Architect.
-              I design and build custom software for businesses that need something
-              built right the first time, not shipped fast and patched later. This
-              questionnaire replaces the back-and-forth intro call with a structured
-              brief I can actually work from.
+              Client work is by appointment. Answer a few quick questions — mostly
+              taps, one short answer — and I&apos;ll read your brief and get back to you
+              to book a call. No need to have everything figured out.
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.25}>
@@ -39,7 +37,7 @@ export default function ProjectDiscoveryPage() {
               <div className="flex items-center gap-2 text-smoke">
                 <Clock size={15} className="text-amber" />
                 <span className="font-code text-[11px] tracking-wide uppercase">
-                  Takes about 10–15 minutes
+                  Takes about 3 minutes
                 </span>
               </div>
               <div className="flex items-center gap-2 text-smoke">

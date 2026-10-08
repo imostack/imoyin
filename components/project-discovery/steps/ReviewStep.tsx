@@ -20,9 +20,8 @@ export function ReviewStep({ data, files, onEditStep, errorMsg }: ReviewStepProp
   return (
     <div>
       <StepIntro
-        eyebrow="Review"
-        title="Everything, in one place."
-        description="Take a look before this goes to my inbox. You can jump back to any section to make a change."
+        title="Look right?"
+        description="Here's your brief. Tap Edit on any section to change it, then send — I'll reply to book a call."
       />
       <div className="divide-y divide-rim border-t border-b border-rim">
         {sections.map(section => (

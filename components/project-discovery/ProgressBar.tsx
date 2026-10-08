@@ -11,11 +11,13 @@ export function ProgressBar({ current, total, label }: ProgressBarProps) {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex items-baseline justify-between gap-4 mb-3">
         <p className="font-code text-[11px] tracking-widest uppercase text-smoke">
-          Step {current} of {total} — {label}
+          Step {current} of {total}
+          <span className="hidden sm:inline"> — </span>
+          <span className="block sm:inline text-fog sm:text-smoke mt-1 sm:mt-0">{label}</span>
         </p>
-        <p className="font-code text-[11px] text-faint">{pct}%</p>
+        <p className="hidden sm:block font-code text-[11px] text-faint flex-shrink-0">{pct}%</p>
       </div>
       <div className="h-px w-full bg-rim overflow-hidden">
         <div
